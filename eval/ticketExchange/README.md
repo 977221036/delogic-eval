@@ -25,7 +25,7 @@ Foram criadas as entidades User, Category, Date , Venue, Event , Listing e Sale
 
 # Parte 3 Endpoints  
   
-Implementados os Endpoints porem devido aos problemas no Junit/Mockito não foram implementados todos os casos de teste para os Controllers.  
+Implementados os Endpoints porem devido aos problemas no Junit/Mockito não foram implementados todos os casos de teste possíveis para os Controllers.  
 
 Os endpoints utilizam como mapping o nome das entidades definidas no passo 2 em caixa baixa com a seguinte regra: 
   
@@ -41,7 +41,7 @@ Os endpoints utilizam como mapping o nome das entidades definidas no passo 2 em 
 
 # Parte 4 Endpoint Promocional 
 
-Implementado o Endpoint promocional utilizando controlador específico para esse fim. Utilizada query HQL no Repositório de Listagens.  Porém devido aos problemas no Junit/Mockito somente foi implementado um caso de teste para o Controller. 
+Implementado o Endpoint promocional utilizando controlador específico para esse fim. Utilizada query HQL no Repositório de Listagens.  Porém devido aos problemas no Junit/Mockito somente foi implementado um caso de teste básico para o Controller. 
 
 ##### Endpoint Exemplo (Metodo GET):   /rest/v1/promotional?contextualDate=2008-12-01%2000:00:00&cityName=New%20York%20City&categoryId=7
 
