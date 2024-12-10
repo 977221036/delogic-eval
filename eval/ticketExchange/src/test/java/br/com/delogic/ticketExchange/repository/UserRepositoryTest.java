@@ -30,8 +30,7 @@ public class UserRepositoryTest {
         
         userRepository.save(newUser);
         
-        //User loaded in Database 
-        //User =  13|QTF33MCG|Henry|Cochran|Bossier       
+        //User loaded in Database         
         Optional<User> UserAcquired =  userRepository.findById(newUser.getId());
            
         assertThat(UserAcquired).isPresent();

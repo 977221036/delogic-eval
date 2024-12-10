@@ -256,4 +256,46 @@ public class Sale implements Serializable {
     public void setSaleTime(java.util.Date saleTime) {
         this.saleTime = saleTime;
     }
+
+	public Listing getListing() {
+		return listing;
+	}
+
+	public void setListing(Listing listing) {
+		this.listing = listing;
+	}
+
+	public User getSeller() {
+		return seller;
+	}
+
+	public void setSeller(User seller) {
+		this.seller = seller;
+	}
+
+	public User getBuyer() {
+		return buyer;
+	}
+
+	public void setBuyer(User buyer) {
+		this.buyer = buyer;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	public br.com.delogic.ticketExchange.domain.Date getDate() {
+		return date;
+	}
+
+	public void setDate(br.com.delogic.ticketExchange.domain.Date date) {
+		this.date = date;
+	}
+        
+    
 }

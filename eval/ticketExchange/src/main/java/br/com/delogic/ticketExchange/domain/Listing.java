@@ -229,4 +229,32 @@ public class Listing implements Serializable {
     public void setListingTime(java.util.Date listingTime) {
         this.listingTime = listingTime;
     }
+
+	public User getSeller() {
+		return seller;
+	}
+
+	public void setSeller(User seller) {
+		this.seller = seller;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	public br.com.delogic.ticketExchange.domain.Date getDate() {
+		return date;
+	}
+
+	public void setDate(br.com.delogic.ticketExchange.domain.Date date) {
+		this.date = date;
+	}
+    
+    
+    
+    
 }

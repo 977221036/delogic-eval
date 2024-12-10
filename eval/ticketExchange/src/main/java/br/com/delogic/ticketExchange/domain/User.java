@@ -36,7 +36,7 @@ public class User implements Serializable{
      *
      * @mbg.generated Fri Dec 06 15:58:29 BRT 2024
      */
-	@Column(name = "name")
+	@Column(name = "username")
     private String username;
 
     /**
