@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 import br.com.delogic.ticketExchange.controler.CategoryController;
+import br.com.delogic.ticketExchange.dto.CategoryDTO;
 import br.com.delogic.ticketExchange.service.CategoryService;
 
 
@@ -52,7 +53,18 @@ public class CategoryControllerTest {
 	       
 	 }
 
-	    
+	 @Test
+	 public void testGetCategoryById_Ok() {		  
+		    
+		   CategoryDTO categoryDTO = new CategoryDTO();
+		   categoryDTO.setId(1L);		   
+	       Optional<CategoryDTO> mockValue = Optional.of(categoryDTO);	
+	           
+	       when(categoryService.getCategoryById(1L)).thenReturn(mockValue);
+	       ResponseEntity<CategoryDTO> response = categoryController.getCategoryById(1L);
+	       assertEquals(ResponseEntity.ok(categoryDTO), response);
+	       
+	 }   
 
    
 }

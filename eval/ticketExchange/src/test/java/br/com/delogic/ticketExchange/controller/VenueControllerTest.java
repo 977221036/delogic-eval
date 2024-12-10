@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 import br.com.delogic.ticketExchange.controler.VenueController;
+import br.com.delogic.ticketExchange.dto.VenueDTO;
 import br.com.delogic.ticketExchange.service.VenueService;
 
 
@@ -51,6 +52,21 @@ public class VenueControllerTest {
 	       assertEquals(ResponseEntity.ok(page), response);
 	       
 	 }
+	 
+	 
+	 @Test
+	 public void testGetVenueById_Ok() {		  
+		    
+		   VenueDTO venueDTO = new VenueDTO();  
+		   venueDTO.setId(1L);
+		   Optional<VenueDTO> mockValue = Optional.of(venueDTO);	
+	           
+	       when(venueService.getVenueById(1L)).thenReturn(mockValue);
+	       ResponseEntity<VenueDTO> response = venueController.getVenueById(1L);
+	       assertEquals(ResponseEntity.ok(venueDTO), response);
+	       
+	 }      
+
 
 	    
 

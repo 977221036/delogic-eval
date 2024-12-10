@@ -18,20 +18,20 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
-import br.com.delogic.ticketExchange.controler.DateController;
-import br.com.delogic.ticketExchange.dto.DateDTO;
-import br.com.delogic.ticketExchange.service.DateService;
+import br.com.delogic.ticketExchange.controler.SalesController;
+import br.com.delogic.ticketExchange.dto.SaleDTO;
+import br.com.delogic.ticketExchange.service.SaleService;
 
 
-public class DateControllerTest {
+public class SaleControllerTest {
 
        
 		    
 	 @Mock
-	 private DateService dateService;
+	 private SaleService saleService;
 	 
 	 @InjectMocks
-	 private DateController dateController;
+	 private SalesController saleController;
 
 	 @BeforeEach
 	 public void setUpMocks() {
@@ -40,31 +40,31 @@ public class DateControllerTest {
 	 
 	
 	 @Test
-	 public void testGetAllDateIds_Ok() {		  
+	 public void testGetAllSaleIds_Ok() {		  
 		   
 	       List<Long> listaId = Collections.singletonList(Long.valueOf(1));
 	       Pageable pageable = PageRequest.of(0, 10);
 	       Page<Long> page = new PageImpl<Long>(listaId,pageable,1L) ; 
 	       Optional<Page<Long>> mockValue = Optional.of(page);	       
 	                 
-	       when(dateService.getAllIds(pageable)).thenReturn(mockValue);
-	       ResponseEntity<Page<Long>> response = dateController.getAllDateIds(pageable);
+	       when(saleService.getAllIds(pageable)).thenReturn(mockValue);
+	       ResponseEntity<Page<Long>> response = saleController.getAllSaleIds(pageable);
 	       assertEquals(ResponseEntity.ok(page), response);
 	       
 	 }
 
 	 @Test
-	 public void testGetDateById_Ok() {		  
+	 public void testGetSaleById_Ok() {		  
 		    
-		   DateDTO dateDTO = new DateDTO();  
-		   dateDTO.setId(1L);
-		   Optional<DateDTO> mockValue = Optional.of(dateDTO);	
+		   SaleDTO saleDTO = new SaleDTO();  
+		   saleDTO.setId(1L);
+		   Optional<SaleDTO> mockValue = Optional.of(saleDTO);	
 	           
-	       when(dateService.getDateById(1L)).thenReturn(mockValue);
-	       ResponseEntity<DateDTO> response = dateController.getDateById(1L);
-	       assertEquals(ResponseEntity.ok(dateDTO), response);
+	       when(saleService.getSaleById(1L)).thenReturn(mockValue);
+	       ResponseEntity<SaleDTO> response = saleController.getSaleById(1L);
+	       assertEquals(ResponseEntity.ok(saleDTO), response);
 	       
-	 }      
+	 }       
 
    
 }
