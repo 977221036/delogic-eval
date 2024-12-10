@@ -29,14 +29,8 @@ import br.com.delogic.ticketExchange.service.UserService;
 public class UserControllerTest {
 
        
-	 
+		    
 	 @Mock
-	 private UserRepository userRepository;
-	    
-	 @Mock
-	 private ModelMapper modelMapper;
-	    
-	 @InjectMocks
 	 private UserService userService;
 	 
 	 @InjectMocks
@@ -49,20 +43,18 @@ public class UserControllerTest {
 	 
 	
 	 @Test
-	 public void testGetAllUserIds_Ok() {
-		   //TODO Solve Junit/Mockito problem		 
-		   /*
+	 public void testGetAllUserIds_Ok() {		  
+		   
 	       List<Long> listaId = Collections.singletonList(Long.valueOf(1));
 	       Pageable pageable = PageRequest.of(0, 10);
 	       Page<Long> page = new PageImpl<Long>(listaId,pageable,1L) ; 
-	       Optional<Page<Long>> retunValue = Optional.of(page);
-	       
-	       
-	       //Optional<Page<Long>> result = userService.getAllIds(pageable);	         	                
-	       when(userService.getAllIds(pageable)).thenReturn(retunValue);
+	       Optional<Page<Long>> mockValue = Optional.of(page);	       
+	              	       
+	       //Optional<Page<Long>> result = userService.getAllIds(pageable);	       
+	       when(userService.getAllIds(pageable)).thenReturn(mockValue);
 	       ResponseEntity<Page<Long>> response = userController.getAllUserIds(pageable);
-	       assertEquals(ResponseEntity.ok(listaId), response);
-	       */
+	       assertEquals(ResponseEntity.ok(page), response);
+	       
 	 }
 
 	    
