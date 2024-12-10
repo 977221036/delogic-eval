@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import br.com.delogic.ticketExchange.domain.Event;
 import br.com.delogic.ticketExchange.domain.Sale;
 
 @DataJpaTest
@@ -41,7 +40,7 @@ public class SaleRepositoryTest {
 	        
 	        saleRepository.save(newSale);
 	        
-	        //User loaded in Database 
+	        //loaded into Database 
 	             
 	        Optional<Sale> saleAcquired =  saleRepository.findById(newSale.getId());
 	           

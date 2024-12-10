@@ -34,7 +34,7 @@ public class DateRepositoryTest {
     	
     	dateRepository.save(newDate);
         
-        //Category loaded into Database               
+        //Date loaded into Database               
         Optional<Date> dateAcquired =  dateRepository.findById(newDate.getId());
            
         assertThat(dateAcquired).isPresent();

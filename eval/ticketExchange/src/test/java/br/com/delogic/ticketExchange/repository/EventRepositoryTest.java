@@ -35,7 +35,7 @@ public class EventRepositoryTest {
 	        
 	        eventRepository.save(newEvent);
 	        
-	        //User loaded in Database 
+	        //Event loaded into Database 
 	             
 	        Optional<Event> eventAcquired =  eventRepository.findById(newEvent.getId());
 	           

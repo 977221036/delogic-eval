@@ -19,7 +19,9 @@ public class ListingRepositoryTest {
 	    
 	
 	    @Autowired
-	    ListingRepository ListingRepository; 
+	    ListingRepository listingRepository; 
+	    
+	    	
 		
 	    @Test
 	    public void testListingSaveAndFind() throws ParseException {   	
@@ -39,16 +41,18 @@ public class ListingRepositoryTest {
 	        newListing.setListingTime(formattedDate);
 	        	        	        
 	        
-	        ListingRepository.save(newListing);
+	        listingRepository.save(newListing);
 	        
 	        //User loaded in Database 
 	             
-	        Optional<Listing> listingAcquired =  ListingRepository.findById(newListing.getId());
+	        Optional<Listing> listingAcquired =  listingRepository.findById(newListing.getId());
 	           
 	        assertThat(listingAcquired).isPresent();
 	        assertThat(totalPrice.equals(listingAcquired.get().getTotalPrice()));
 	        
 	    }
-
+	    
+	    
+	    
 	
 }

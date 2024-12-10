@@ -32,7 +32,7 @@ public class VenueRepositoryTest {
     	
     	venueRepository.save(newVenue);
         
-        //Category loaded into Database               
+        //venue loaded into Database               
         Optional<Venue> venueAcquired =  venueRepository.findById(newVenue.getId());
            
         assertThat(venueAcquired).isPresent();
