@@ -1,4 +1,4 @@
-package br.com.delogic.ticketExchange.controler;
+package br.com.delogic.ticketExchange.controller;
 
 import java.util.Optional;
 

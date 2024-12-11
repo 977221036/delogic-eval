@@ -7,7 +7,10 @@ import org.modelmapper.ModelMapper;
 @Configuration
 public class ModelMapperConfig {
 	
-    @Bean
+	/*
+	   Configuration for automatic Mapping DTO <-> Entity
+	*/
+	@Bean
     public ModelMapper modelMapper() {
        return new ModelMapper();    
     }

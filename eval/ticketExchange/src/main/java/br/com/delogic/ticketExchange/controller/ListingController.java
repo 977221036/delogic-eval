@@ -1,4 +1,4 @@
-package br.com.delogic.ticketExchange.controler;
+package br.com.delogic.ticketExchange.controller;
 
 import java.util.Optional;
 
@@ -10,28 +10,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.delogic.ticketExchange.dto.EventDTO;
-import br.com.delogic.ticketExchange.service.EventService;
+import br.com.delogic.ticketExchange.dto.ListingDTO;
+import br.com.delogic.ticketExchange.service.ListingService;
 
 
 @RestController
-public class EventController extends RootController{
+public class ListingController extends RootController{
 	
 	@Autowired
-    private EventService eventService;
+    private ListingService listingService;
 
         
-    @GetMapping("/events")
-    public ResponseEntity<Page<Long>> getAllEventIds(Pageable pageable) {    	
-    	Optional<Page<Long>> result = eventService.getAllIds(pageable);
+    @GetMapping("/listings")
+    public ResponseEntity<Page<Long>> getAllListingIds(Pageable pageable) {    	
+    	Optional<Page<Long>> result = listingService.getAllIds(pageable);
     	return result.map(ResponseEntity::ok)
                      .orElse(ResponseEntity.notFound().build());    
     }
     
 
-    @GetMapping("/events/{id}")
-    public ResponseEntity<EventDTO> getEventById(@PathVariable Long id) {
-        return eventService.getEventById(id)
+    @GetMapping("/listings/{id}")
+    public ResponseEntity<ListingDTO> getListingById(@PathVariable Long id) {
+        return listingService.getListingById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

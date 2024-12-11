@@ -1,4 +1,4 @@
-package br.com.delogic.ticketExchange.controler;
+package br.com.delogic.ticketExchange.controller;
 
 import java.util.Optional;
 
@@ -10,30 +10,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.delogic.ticketExchange.dto.SaleDTO;
-import br.com.delogic.ticketExchange.service.SaleService;
+import br.com.delogic.ticketExchange.dto.DateDTO;
+import br.com.delogic.ticketExchange.service.DateService;
 
 @RestController
-public class SalesController extends RootController{
+public class DateController extends RootController{
 	
 	@Autowired
-    private SaleService saleService;
+    private DateService dateService;
 
         
-    @GetMapping("/sales")
-    public ResponseEntity<Page<Long>> getAllSaleIds(Pageable pageable) {    	
-    	Optional<Page<Long>> result = saleService.getAllIds(pageable);
+    @GetMapping("/dates")
+    public ResponseEntity<Page<Long>> getAllDateIds(Pageable pageable) {    	
+    	Optional<Page<Long>> result = dateService.getAllIds(pageable);
     	return result.map(ResponseEntity::ok)
                      .orElse(ResponseEntity.notFound().build());    
     }
     
 
-    @GetMapping("/sales/{id}")
-    public ResponseEntity<SaleDTO> getSaleById(@PathVariable Long id) {
-        return saleService.getSaleById(id)
+    @GetMapping("/dates/{id}")
+    public ResponseEntity<DateDTO> getDateById(@PathVariable Long id) {
+        return dateService.getDateById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
 
 }

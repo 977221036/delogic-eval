@@ -46,9 +46,9 @@ dependencies {
  
 
 flyway {
-    url = 'jdbc:mysql://localhost:3307/delogic'
-    user = 'root'
-    password = 'root'
+    url = '${DATABASE_URL}'
+    user = '${DATABASE_USER}'
+    password = '${DATABASE_PASSWORD}'
     locations = ['filesystem:src/main/resources/db/migration']     
 }
   

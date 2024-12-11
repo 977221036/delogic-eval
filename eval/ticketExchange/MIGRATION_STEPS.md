@@ -3,12 +3,11 @@
 
 #1) In order to run the migration you will need a running instance of MYSQL 
 
-In this case, a schema called 'delogic' was created  with the following parameters in both application.properties and build.gradle:  
+In this case, a schema called 'delogic' was created with the following environment variables (read in both application.properties and build.gradle). You can change them to better suit your working environment:  
 
-url = 'jdbc:mysql://localhost:3307/delogic'
-user = 'root'
-password = 'root'  
-
+DATABASE_URL=jdbc:mysql://localhost:3307/delogic
+DATABASE_USER=root
+DATABASE_PASSWORD=root	
 
 
 #2) Copy the text files to the folder src/main/resources/db/data

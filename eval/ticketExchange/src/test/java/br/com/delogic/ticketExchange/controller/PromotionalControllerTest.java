@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 
-import br.com.delogic.ticketExchange.controler.PromotionalControler;
+import br.com.delogic.ticketExchange.controller.PromotionalControler;
 import br.com.delogic.ticketExchange.service.ListingService;
 
 

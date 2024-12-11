@@ -18,7 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
-import br.com.delogic.ticketExchange.controler.EventController;
+import br.com.delogic.ticketExchange.controller.EventController;
 import br.com.delogic.ticketExchange.dto.EventDTO;
 import br.com.delogic.ticketExchange.service.EventService;
 
